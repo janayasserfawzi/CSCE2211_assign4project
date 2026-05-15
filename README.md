@@ -1,5 +1,7 @@
 # Assignment 4: String Matching Algorithms
 
+#JANA FAWZI - 900241258
+
 ## Overview
 This program implements and compares two string matching algorithms:
 - **Boyer-Moore Algorithm**
