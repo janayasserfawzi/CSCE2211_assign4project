@@ -54,10 +54,10 @@ void highlightMatch(const string& text, const string& pattern, const vector<int>
 
 void printStatistics(const Stats& s) {
     cout << "\nStatistics\n";
-    cout << "Algorithm   : " << s.algorithm << "\n";
-    cout << "Comparisons : " << s.comparisons << "\n";
-    cout << "Matches     : " << s.matches << "\n";
-    cout << "Time (ms)   : " << s.timeMs << "\n";
+    cout << "Algorithm: " << s.algorithm << "\n";
+    cout << "Comparisons: " << s.comparisons << "\n";
+    cout << "Matches: " << s.matches << "\n";
+    cout << "Time(ms): " << s.timeMs << "\n";
     if (!s.matchPositions.empty()) {
         cout << "Match positions: ";
         for (int p : s.matchPositions) cout << p << " ";
@@ -204,13 +204,13 @@ void runSearch(bool useBoyer) {
         auto end = high_resolution_clock::now();
         s.timeMs = duration<double, milli>(end - start).count();
 
-        cout << "\nText   : " << globalText << "\n";
+        cout << "\nText: " << globalText << "\n";
         cout << "Pattern: " << pattern << "\n";
 
         if (s.matches == 0) {
-            cout << "Result : No match found.\n";
+            cout << "Result: No match found.\n";
         } else {
-            cout << "Result : ";
+            cout << "Result: ";
             highlightMatch(globalText, pattern, s.matchPositions);
             for (int pos : s.matchPositions)
                 cout << "Match at index: " << pos << "\n";
@@ -297,12 +297,12 @@ void compareAlgorithms() {
     cout << "[Boyer-Moore]\n";
     cout << "Comparisons: " << bm.comparisons << "\n";
     cout << "Matches: " << bm.matches     << "\n";
-    cout << "Time (ms): " << bm.timeMs      << "\n";
+    cout << "Time(ms): " << bm.timeMs      << "\n";
 
     cout << "\n[Rabin-Karp]\n";
     cout << "Comparisons: " << rk.comparisons << "\n";
     cout << "Matches: " << rk.matches     << "\n";
-    cout << "Time (ms): " << rk.timeMs      << "\n";
+    cout << "Time(ms): " << rk.timeMs      << "\n";
 
     cout << "\n[Winner]\n";
     if (bm.comparisons < rk.comparisons)
